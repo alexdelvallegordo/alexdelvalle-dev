@@ -1,0 +1,85 @@
+---
+const projects = [
+  {
+    title: "Production Platform Lab",
+    description:
+      "A production-like platform built to learn containers, Kubernetes, GitOps and reliability engineering.",
+    status: "Planned",
+  },
+  {
+    title: "Infrastructure as Code Lab",
+    description:
+      "Cloud infrastructure built with Terraform and AWS, focusing on networking, IAM and reproducibility.",
+    status: "Planned",
+  },
+  {
+    title: "Reliability Engineering Lab",
+    description:
+      "An SRE-focused lab for observability, SLOs, alerting, incident response and postmortems.",
+    status: "Planned",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Alex del Valle — Platform and Automation Engineer building toward Site Reliability Engineering."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <title>Alex del Valle | Platform & Automation Engineer</title>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <p>Platform & Automation Engineer</p>
+
+        <h1>Alex del Valle</h1>
+
+        <p>
+          Linux and automation engineer building deeper expertise in platform
+          engineering, cloud infrastructure and site reliability engineering.
+        </p>
+      </section>
+
+      <section>
+        <h2>Current focus</h2>
+
+        <ul>
+          <li>Linux & Ansible Automation Platform</li>
+          <li>Containers & Kubernetes</li>
+          <li>Infrastructure as Code</li>
+          <li>Cloud Engineering</li>
+          <li>Reliability Engineering</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Engineering projects</h2>
+
+        {
+          projects.map((project) => (
+            <article>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <small>{project.status}</small>
+            </article>
+          ))
+        }
+      </section>
+
+      <section>
+        <h2>About this site</h2>
+
+        <p>
+          This portfolio documents the systems I build, the engineering
+          decisions behind them, the failures I encounter and what I learn from
+          solving them.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
