@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    number: "01",
+    title: "Production Platform Lab",
+    status: "Planned",
+    description:
+      "A production-like platform designed to develop practical skills in containers, Kubernetes, deployment, networking and platform reliability.",
+    technologies: [
+      "Docker",
+      "Kubernetes",
+      "Helm",
+      "GitHub Actions",
+      "Argo CD",
+    ],
+    goals: [
+      "Deploy and operate containerized workloads",
+      "Implement health checks, resource management and autoscaling",
+      "Practice Kubernetes troubleshooting",
+      "Build a GitOps-based delivery workflow",
+    ],
+  },
+
+  {
+    number: "02",
+    title: "Infrastructure as Code Lab",
+    status: "Planned",
+    description:
+      "Reproducible cloud infrastructure built to learn infrastructure design, networking and automation using Terraform and AWS.",
+    technologies: [
+      "Terraform",
+      "AWS",
+      "IAM",
+      "VPC",
+      "CloudWatch",
+    ],
+    goals: [
+      "Build infrastructure from code",
+      "Understand AWS networking and IAM",
+      "Work with Terraform state and modules",
+      "Design repeatable infrastructure environments",
+    ],
+  },
+
+  {
+    number: "03",
+    title: "Reliability Engineering Lab",
+    status: "Planned",
+    description:
+      "An environment for practicing Site Reliability Engineering concepts by intentionally introducing failures and observing system behavior.",
+    technologies: [
+      "Prometheus",
+      "Grafana",
+      "OpenTelemetry",
+      "Kubernetes",
+    ],
+    goals: [
+      "Define SLIs and SLOs",
+      "Design actionable alerts",
+      "Run controlled failure scenarios",
+      "Write incident postmortems",
+    ],
+  },
+
+  {
+    number: "04",
+    title: "Automation Platform",
+    status: "Planned",
+    description:
+      "A self-service infrastructure automation platform inspired by real operational workflows while remaining fully independent from proprietary systems.",
+    technologies: [
+      "Python",
+      "FastAPI",
+      "Ansible",
+      "AWX",
+      "REST APIs",
+    ],
+    goals: [
+      "Expose automation through APIs",
+      "Build reusable operational workflows",
+      "Implement health and connectivity checks",
+      "Connect Python services with Ansible automation",
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Engineering Projects | Alex del Valle"
+  description="Engineering projects by Alex del Valle focused on Platform Engineering, Automation and Site Reliability Engineering."
+>
+  <section>
+    <div class="container">
+      <p class="eyebrow">Engineering Projects</p>
+
+      <h1>Learning by designing, building and breaking systems.</h1>
+
+      <p class="lead">
+        These projects document my progression from infrastructure automation
+        into Platform Engineering and Site Reliability Engineering. Each
+        project focuses on practical implementation, troubleshooting and
+        engineering decisions rather than isolated tutorials.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container project-list">
+      {
+        projects.map((project) => (
+          <article class="project">
+            <div class="project-meta">
+              <span>{project.number}</span>
+              <span>{project.status}</span>
+            </div>
+
+            <div>
+              <h2>{project.title}</h2>
+
+              <p class="lead">{project.description}</p>
+
+              <h3>Technologies</h3>
+
+              <div class="technology-list">
+                {
+                  project.technologies.map((technology) => (
+                    <span>{technology}</span>
+                  ))
+                }
+              </div>
+
+              <h3>Engineering goals</h3>
+
+              <ul>
+                {
+                  project.goals.map((goal) => (
+                    <li>{goal}</li>
+                  ))
+                }
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
