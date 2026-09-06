@@ -1,0 +1,200 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const currentCapabilities = [
+  "Ansible Automation Platform",
+  "Linux",
+  "Platform ownership",
+  "Technical coordination",
+  "Automation workflows",
+  "Execution environments",
+  "REST APIs",
+  "Problem management",
+  "Process improvement",
+  "Migrations & upgrades",
+];
+
+const linuxCapabilities = [
+  "Red Hat Linux",
+  "Technical leadership",
+  "Team coordination",
+  "Production operations",
+  "Problem management",
+  "Change management",
+  "Process improvement",
+  "Migrations & upgrades",
+  "Middleware infrastructure",
+];
+---
+
+<BaseLayout
+  title="Experience | Alex del Valle"
+  description="Professional experience of Alex del Valle in Linux infrastructure, technical leadership, automation platforms and Platform Engineering."
+>
+  <!-- HERO -->
+  <section>
+    <div class="container">
+      <p class="eyebrow">Experience</p>
+
+      <h1>
+        From Linux infrastructure leadership to platform engineering.
+      </h1>
+
+      <p class="lead">
+        My career has evolved from Linux infrastructure and enterprise
+        operations into automation platform engineering, with increasing
+        responsibility for technical coordination, platform ownership,
+        reliability and continuous improvement.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container experience-list">
+
+      <!-- CURRENT ROLE -->
+      <article class="experience">
+        <div class="experience-meta">
+          <span>Current</span>
+          <span>Automation Platform</span>
+        </div>
+
+        <div>
+          <p class="eyebrow">Current role</p>
+
+          <h2>Automation Platform Engineering</h2>
+
+          <p class="lead">
+            Responsible for the operation and evolution of enterprise
+            automation infrastructure based on Linux and Ansible Automation
+            Platform.
+          </p>
+
+          <p>
+            The role combines hands-on platform engineering with infrastructure
+            ownership, technical coordination, problem management and
+            continuous improvement.
+          </p>
+
+          <h3>Selected responsibilities & impact</h3>
+
+          <ul class="experience-points">
+            <li>
+              Own the day-to-day technical health and operation of the
+              automation platform and its Linux-based infrastructure.
+            </li>
+
+            <li>
+              Coordinate platform requirements and improvements with
+              development and infrastructure teams, translating operational
+              needs into technical actions and validating the resulting
+              changes.
+            </li>
+
+            <li>
+              Drive troubleshooting and problem management, identifying root
+              causes and defining corrective and preventive improvements.
+            </li>
+
+            <li>
+              Contribute to platform upgrades, migrations, lifecycle planning
+              and technical decisions involving operational risk and service
+              impact.
+            </li>
+
+            <li>
+              Improved the infrastructure patching process, reducing the
+              execution window from approximately 7 hours to 4 hours while
+              strengthening validation and operational controls.
+            </li>
+
+            <li>
+              Standardize operational work through runbooks, connectivity
+              checks, reusable automation and improved procedures.
+            </li>
+          </ul>
+
+          <h3>Core technologies & practices</h3>
+
+          <div class="technology-list">
+            {
+              currentCapabilities.map((capability) => (
+                <span>{capability}</span>
+              ))
+            }
+          </div>
+        </div>
+      </article>
+
+
+      <!-- PREVIOUS ROLE -->
+      <article class="experience">
+        <div class="experience-meta">
+          <span>Previous</span>
+          <span>Linux Leadership</span>
+        </div>
+
+        <div>
+          <p class="eyebrow">Previous experience</p>
+
+          <h2>Linux Infrastructure Technical Lead</h2>
+
+          <p class="lead">
+            Enterprise Linux infrastructure role combining hands-on systems
+            administration with technical leadership, production ownership and
+            cross-team coordination.
+          </p>
+
+          <p>
+            This stage provided the operational and leadership foundation for
+            my transition from traditional infrastructure management into
+            automation and platform engineering.
+          </p>
+
+          <h3>Selected responsibilities</h3>
+
+          <ul class="experience-points">
+            <li>
+              Acted as a technical reference for Linux infrastructure,
+              coordinating work across infrastructure, middleware and
+              application teams.
+            </li>
+
+            <li>
+              Managed Red Hat Linux production environments and their
+              maintenance, patching, upgrades and lifecycle activities.
+            </li>
+
+            <li>
+              Coordinated technical actions during incidents, changes and
+              infrastructure problems involving multiple teams and system
+              dependencies.
+            </li>
+
+            <li>
+              Participated in migrations and upgrade projects while evaluating
+              operational risk, dependencies and service impact.
+            </li>
+
+            <li>
+              Improved and standardized operational procedures through
+              documentation, runbooks and repeatable processes, progressively
+              introducing a stronger automation mindset.
+            </li>
+          </ul>
+
+          <h3>Core technologies & practices</h3>
+
+          <div class="technology-list">
+            {
+              linuxCapabilities.map((capability) => (
+                <span>{capability}</span>
+              ))
+            }
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</BaseLayout>

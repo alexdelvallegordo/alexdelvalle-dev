@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const principles = [
+  {
+    title: "Ownership",
+    description:
+      "I prefer understanding and owning systems end-to-end rather than limiting my work to isolated operational tasks.",
+  },
+  {
+    title: "Automation",
+    description:
+      "Repeated manual work is usually a signal that a process can be simplified, standardized or automated.",
+  },
+  {
+    title: "Reliability",
+    description:
+      "Infrastructure should not only work; it should be observable, predictable and designed to fail safely.",
+  },
+  {
+    title: "Continuous improvement",
+    description:
+      "I look for measurable ways to improve processes, reduce operational risk and make systems easier to operate.",
+  },
+];
+---
+
+<BaseLayout
+  title="About | Alex del Valle"
+  description="About Alex del Valle, Platform and Automation Engineer focused on infrastructure, automation and Site Reliability Engineering."
+>
+  <section>
+    <div class="container">
+      <p class="eyebrow">About</p>
+
+      <h1>
+        Infrastructure engineer focused on automation, platforms and reliability.
+      </h1>
+
+      <p class="lead">
+        I'm Alex del Valle, a Platform and Automation Engineer with a
+        background in Linux infrastructure and enterprise production
+        environments.
+      </p>
+
+      <p class="lead">
+        My career has progressively moved from traditional systems
+        administration toward automation, platform ownership and technical
+        coordination. I'm currently expanding that foundation into Kubernetes,
+        cloud infrastructure, Infrastructure as Code and Site Reliability
+        Engineering.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Engineering mindset</p>
+
+      <h2>How I approach infrastructure engineering.</h2>
+
+      <div class="grid">
+        {
+          principles.map((principle) => (
+            <article class="card">
+              <h3>{principle.title}</h3>
+              <p>{principle.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Direction</p>
+
+      <h2>Building toward Site Reliability Engineering.</h2>
+
+      <p class="lead">
+        My long-term direction is Site Reliability and Platform Engineering,
+        combining strong infrastructure fundamentals with automation,
+        observability, distributed systems and technical leadership.
+      </p>
+
+      <p>
+        This portfolio documents that progression through hands-on engineering
+        projects, technical decisions, failures, troubleshooting and lessons
+        learned.
+      </p>
+
+      <div class="button-group">
+        <a class="button primary" href="/projects">
+          View engineering projects
+        </a>
+
+        <a
+          class="button"
+          href="https://github.com/alexdelvallegordo"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

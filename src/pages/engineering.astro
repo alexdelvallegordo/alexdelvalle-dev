@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const entries = [
+  {
+    type: "Engineering Note",
+    status: "Planned",
+    title: "Designing health checks that actually protect a platform",
+    description:
+      "Exploring the difference between basic connectivity checks and meaningful health validation in infrastructure platforms.",
+    topics: ["Reliability", "Health checks", "Automation"],
+  },
+  {
+    type: "Architecture Decision",
+    status: "Planned",
+    title: "Why GitOps for Kubernetes deployments",
+    description:
+      "An architecture decision record comparing GitOps with direct CI/CD deployment approaches.",
+    topics: ["Kubernetes", "GitOps", "Argo CD"],
+  },
+  {
+    type: "Postmortem",
+    status: "Planned",
+    title: "Failure scenario: degraded Kubernetes service",
+    description:
+      "A controlled reliability experiment covering detection, diagnosis, mitigation, root cause and corrective actions.",
+    topics: ["SRE", "Incident response", "Observability"],
+  },
+];
+---
+
+<BaseLayout
+  title="Engineering | Alex del Valle"
+  description="Engineering notes, architecture decisions and reliability case studies by Alex del Valle."
+>
+  <section>
+    <div class="container">
+      <p class="eyebrow">Engineering</p>
+
+      <h1>
+        Decisions, failures and lessons learned while building systems.
+      </h1>
+
+      <p class="lead">
+        This section documents the engineering reasoning behind my projects:
+        architecture decisions, reliability experiments, troubleshooting,
+        postmortems and lessons learned.
+      </p>
+
+      <p>
+        The goal is not to publish generic tutorials, but to document why
+        technical decisions were made, what trade-offs were considered and
+        what happened when systems failed.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Engineering journal</p>
+
+      <h2>Work in progress.</h2>
+
+      <div class="engineering-list">
+        {
+          entries.map((entry) => (
+            <article class="engineering-entry">
+              <div class="engineering-meta">
+                <span>{entry.type}</span>
+                <span>{entry.status}</span>
+              </div>
+
+              <div>
+                <h3>{entry.title}</h3>
+
+                <p>{entry.description}</p>
+
+                <div class="technology-list">
+                  {
+                    entry.topics.map((topic) => (
+                      <span>{topic}</span>
+                    ))
+                  }
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">What will live here</p>
+
+      <h2>Engineering evidence, not content for content's sake.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Architecture decisions</h3>
+          <p>
+            ADRs explaining technical choices, alternatives, trade-offs and
+            consequences.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Reliability & incidents</h3>
+          <p>
+            Failure scenarios, incident analysis, SLOs, alerting decisions and
+            postmortems.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Engineering notes</h3>
+          <p>
+            Practical lessons learned while designing, operating and
+            troubleshooting infrastructure.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
