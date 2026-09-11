@@ -3,71 +3,86 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const entries = [
   {
-    type: "Engineering Note",
-    status: "Planned",
-    title: "Designing health checks that actually protect a platform",
+    type: "Reliability Experiment",
+    status: "Published",
+    title: "Kubernetes Pod Failure and Automatic Recovery",
     description:
-      "Exploring the difference between basic connectivity checks and meaningful health validation in infrastructure platforms.",
-    topics: ["Reliability", "Health checks", "Automation"],
+      "A controlled AWX Web pod failure used to observe ReplicaSet reconciliation, workload replacement, ephemeral Pod addressing and automatic Service endpoint updates.",
+    topics: [
+      "Kubernetes",
+      "AWX",
+      "Reliability",
+      "Troubleshooting",
+    ],
+    href:
+      "https://github.com/alexdelvallegordo/automation-platform-lab/blob/main/docs/reliability/pod-failure-recovery.md",
+    action: "Read experiment",
+  },
+  {
+    type: "Incident Simulation",
+    status: "Planned",
+    title: "Failed Kubernetes Rollout",
+    description:
+      "A controlled deployment failure using an invalid container image, followed by diagnosis, root cause analysis, recovery and preventive actions.",
+    topics: [
+      "Kubernetes",
+      "ImagePullBackOff",
+      "Incident response",
+      "Rollback",
+    ],
   },
   {
     type: "Architecture Decision",
     status: "Planned",
-    title: "Why GitOps for Kubernetes deployments",
+    title: "Workload and Service Exposure Strategy",
     description:
-      "An architecture decision record comparing GitOps with direct CI/CD deployment approaches.",
-    topics: ["Kubernetes", "GitOps", "Argo CD"],
+      "An architecture decision record documenting workload deployment and service exposure choices, including trade-offs and operational implications.",
+    topics: [
+      "Architecture",
+      "Kubernetes",
+      "ADR",
+      "Platform Engineering",
+    ],
   },
   {
-    type: "Postmortem",
+    type: "Case Study",
     status: "Planned",
-    title: "Failure scenario: degraded Kubernetes service",
+    title: "Reducing an Infrastructure Patching Window",
     description:
-      "A controlled reliability experiment covering detection, diagnosis, mitigation, root cause and corrective actions.",
-    topics: ["SRE", "Incident response", "Observability"],
+      "A sanitized engineering case study covering the analysis and improvement of an infrastructure patching process, reducing execution time from approximately seven hours to four.",
+    topics: [
+      "Automation",
+      "Operations",
+      "Process improvement",
+      "Reliability",
+    ],
   },
 ];
 ---
 
-<BaseLayout
-  title="Engineering | Alex del Valle"
-  description="Engineering notes, architecture decisions and reliability case studies by Alex del Valle."
->
+<BaseLayout title="Engineering | Alex del Valle">
   <section>
     <div class="container">
       <p class="eyebrow">Engineering</p>
 
-      <h1>
-        Decisions, failures and lessons learned while building systems.
-      </h1>
+      <h1>Decisions, failures and lessons learned while building systems.</h1>
 
       <p class="lead">
-        This section documents the engineering reasoning behind my projects:
-        architecture decisions, reliability experiments, troubleshooting,
-        postmortems and lessons learned.
-      </p>
-
-      <p>
-        The goal is not to publish generic tutorials, but to document why
-        technical decisions were made, what trade-offs were considered and
-        what happened when systems failed.
+        Technical notes focused on architecture, reliability, troubleshooting,
+        incident analysis and the reasoning behind engineering decisions.
       </p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <p class="eyebrow">Engineering journal</p>
-
-      <h2>Work in progress.</h2>
-
       <div class="engineering-list">
         {
           entries.map((entry) => (
             <article class="engineering-entry">
               <div class="engineering-meta">
                 <span>{entry.type}</span>
-                <span>{entry.status}</span>
+                <span class="tag">{entry.status}</span>
               </div>
 
               <div>
@@ -75,51 +90,30 @@ const entries = [
 
                 <p>{entry.description}</p>
 
-                <div class="technology-list">
-                  {
-                    entry.topics.map((topic) => (
-                      <span>{topic}</span>
-                    ))
-                  }
+                <div class="stack">
+                  {entry.topics.map((topic) => (
+                    <span class="tag">{topic}</span>
+                  ))}
                 </div>
+
+                {
+                  entry.href && (
+                    <div class="button-group">
+                      <a
+                        class="button"
+                        href={entry.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {entry.action}
+                      </a>
+                    </div>
+                  )
+                }
               </div>
             </article>
           ))
         }
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <p class="eyebrow">What will live here</p>
-
-      <h2>Engineering evidence, not content for content's sake.</h2>
-
-      <div class="grid">
-        <article class="card">
-          <h3>Architecture decisions</h3>
-          <p>
-            ADRs explaining technical choices, alternatives, trade-offs and
-            consequences.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Reliability & incidents</h3>
-          <p>
-            Failure scenarios, incident analysis, SLOs, alerting decisions and
-            postmortems.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Engineering notes</h3>
-          <p>
-            Practical lessons learned while designing, operating and
-            troubleshooting infrastructure.
-          </p>
-        </article>
       </div>
     </div>
   </section>

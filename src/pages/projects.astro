@@ -4,52 +4,70 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const projects = [
   {
     number: "01",
+    title: "Automation Platform Lab",
+    status: "In progress",
+    description:
+      "A hands-on Platform Engineering environment using AWX and Kubernetes to explore platform operations, workload behaviour, troubleshooting and reliability.",
+    technologies: [
+      "AWX",
+      "Kubernetes",
+      "Kind",
+      "Podman",
+      "Linux",
+    ],
+    goals: [
+      "Operate and troubleshoot a Kubernetes-based automation platform",
+      "Introduce controlled failures and document recovery behaviour",
+      "Build operational runbooks and reliability experiments",
+      "Progressively introduce automation, observability and SRE practices",
+    ],
+    repository:
+      "https://github.com/alexdelvallegordo/automation-platform-lab",
+  },
+  {
+    number: "02",
     title: "Production Platform Lab",
     status: "Planned",
     description:
-      "A production-like platform designed to develop practical skills in containers, Kubernetes, deployment, networking and platform reliability.",
+      "A production-like platform focused on Kubernetes, deployment workflows, GitOps and reliable application delivery.",
     technologies: [
-      "Docker",
       "Kubernetes",
       "Helm",
-      "GitHub Actions",
-      "Argo CD",
+      "GitOps",
+      "CI/CD",
     ],
     goals: [
       "Deploy and operate containerized workloads",
-      "Implement health checks, resource management and autoscaling",
-      "Practice Kubernetes troubleshooting",
-      "Build a GitOps-based delivery workflow",
+      "Introduce repeatable deployment workflows",
+      "Implement GitOps-based configuration management",
+      "Explore reliability and deployment strategies",
     ],
   },
-
   {
-    number: "02",
+    number: "03",
     title: "Infrastructure as Code Lab",
     status: "Planned",
     description:
-      "Reproducible cloud infrastructure built to learn infrastructure design, networking and automation using Terraform and AWS.",
+      "Cloud infrastructure built through Infrastructure as Code with a focus on reproducibility, networking, security and operational consistency.",
     technologies: [
       "Terraform",
       "AWS",
       "IAM",
       "VPC",
-      "CloudWatch",
     ],
     goals: [
-      "Build infrastructure from code",
-      "Understand AWS networking and IAM",
-      "Work with Terraform state and modules",
-      "Design repeatable infrastructure environments",
+      "Provision infrastructure through code",
+      "Design reusable Terraform configurations",
+      "Understand cloud networking and IAM",
+      "Build reproducible infrastructure environments",
     ],
   },
-
   {
-    number: "03",
+    number: "04",
     title: "Reliability Engineering Lab",
     status: "Planned",
     description:
-      "An environment for practicing Site Reliability Engineering concepts by intentionally introducing failures and observing system behavior.",
+      "An SRE-focused environment for observability, service reliability, incident response and measurable operational objectives.",
     technologies: [
       "Prometheus",
       "Grafana",
@@ -57,93 +75,76 @@ const projects = [
       "Kubernetes",
     ],
     goals: [
+      "Implement metrics and observability",
       "Define SLIs and SLOs",
-      "Design actionable alerts",
-      "Run controlled failure scenarios",
-      "Write incident postmortems",
-    ],
-  },
-
-  {
-    number: "04",
-    title: "Automation Platform",
-    status: "Planned",
-    description:
-      "A self-service infrastructure automation platform inspired by real operational workflows while remaining fully independent from proprietary systems.",
-    technologies: [
-      "Python",
-      "FastAPI",
-      "Ansible",
-      "AWX",
-      "REST APIs",
-    ],
-    goals: [
-      "Expose automation through APIs",
-      "Build reusable operational workflows",
-      "Implement health and connectivity checks",
-      "Connect Python services with Ansible automation",
+      "Create meaningful alerts",
+      "Practice incident response and postmortems",
     ],
   },
 ];
 ---
 
-<BaseLayout
-  title="Engineering Projects | Alex del Valle"
-  description="Engineering projects by Alex del Valle focused on Platform Engineering, Automation and Site Reliability Engineering."
->
-  <section>
+<BaseLayout title="Projects | Alex del Valle">
+  <section class="projects-page">
     <div class="container">
-      <p class="eyebrow">Engineering Projects</p>
+      <div class="projects-intro">
+        <p class="eyebrow">Engineering projects</p>
 
-      <h1>Learning by designing, building and breaking systems.</h1>
+        <h1>Learning by building and operating systems.</h1>
 
-      <p class="lead">
-        These projects document my progression from infrastructure automation
-        into Platform Engineering and Site Reliability Engineering. Each
-        project focuses on practical implementation, troubleshooting and
-        engineering decisions rather than isolated tutorials.
-      </p>
-    </div>
-  </section>
+        <p class="lead">
+          Hands-on projects focused on Platform Engineering, automation,
+          Kubernetes, Infrastructure as Code and Site Reliability Engineering.
+        </p>
+      </div>
 
-  <section>
-    <div class="container project-list">
-      {
-        projects.map((project) => (
-          <article class="project">
-            <div class="project-meta">
-              <span>{project.number}</span>
-              <span>{project.status}</span>
-            </div>
-
-            <div>
-              <h2>{project.title}</h2>
-
-              <p class="lead">{project.description}</p>
-
-              <h3>Technologies</h3>
-
-              <div class="technology-list">
-                {
-                  project.technologies.map((technology) => (
-                    <span>{technology}</span>
-                  ))
-                }
+      <div class="project-list">
+        {
+          projects.map((project) => (
+            <article class="project-entry">
+              <div class="project-meta">
+                <span>{project.number}</span>
+                <span class="tag">{project.status}</span>
               </div>
 
-              <h3>Engineering goals</h3>
+              <div>
+                <h2>{project.title}</h2>
 
-              <ul>
-                {
-                  project.goals.map((goal) => (
+                <p>{project.description}</p>
+
+                <div class="stack">
+                  {project.technologies.map((technology) => (
+                    <span class="tag">{technology}</span>
+                  ))}
+                </div>
+
+                <h3>Engineering goals</h3>
+
+                <ul>
+                  {project.goals.map((goal) => (
                     <li>{goal}</li>
-                  ))
+                  ))}
+                </ul>
+
+                {
+                  project.repository && (
+                    <div class="button-group">
+                      <a
+                        class="button"
+                        href={project.repository}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        View repository
+                      </a>
+                    </div>
+                  )
                 }
-              </ul>
-            </div>
-          </article>
-        ))
-      }
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
