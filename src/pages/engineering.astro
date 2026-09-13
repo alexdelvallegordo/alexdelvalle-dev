@@ -3,7 +3,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const entries = [
   {
-    type: "Reliability Experiment",
+    type: "Engineering system",
+    status: "Active",
+    title: "Automation Platform Reliability",
+    description:
+      "A production-style automation platform combining AWX, Kubernetes, custom health monitoring, Prometheus, Grafana, Helm, CI and Ingress. The project focuses on operability, observability and reliability rather than infrastructure deployment alone.",
+    topics: [
+      "SRE",
+      "Automation",
+      "Observability",
+      "Kubernetes",
+      "Python",
+    ],
+    href: "https://github.com/alexdelvallegordo/platform-health",
+    action: "View repository",
+  },
+  {
+    type: "Reliability experiment",
     status: "Published",
     title: "Kubernetes Pod Failure and Automatic Recovery",
     description:
@@ -19,60 +35,55 @@ const entries = [
     action: "Read experiment",
   },
   {
-    type: "Incident Simulation",
-    status: "Planned",
-    title: "Failed Kubernetes Rollout",
-    description:
-      "A controlled deployment failure using an invalid container image, followed by diagnosis, root cause analysis, recovery and preventive actions.",
-    topics: [
-      "Kubernetes",
-      "ImagePullBackOff",
-      "Incident response",
-      "Rollback",
-    ],
-  },
-  {
-    type: "Architecture Decision",
-    status: "Planned",
-    title: "Workload and Service Exposure Strategy",
-    description:
-      "An architecture decision record documenting workload deployment and service exposure choices, including trade-offs and operational implications.",
-    topics: [
-      "Architecture",
-      "Kubernetes",
-      "ADR",
-      "Platform Engineering",
-    ],
-  },
-  {
-    type: "Case Study",
-    status: "Planned",
+    type: "Operational improvement",
+    status: "Professional impact",
     title: "Reducing an Infrastructure Patching Window",
     description:
-      "A sanitized engineering case study covering the analysis and improvement of an infrastructure patching process, reducing execution time from approximately seven hours to four.",
+      "A production improvement that redesigned an infrastructure patching workflow, reducing the execution window from approximately seven hours to four while strengthening validation and operational control.",
     topics: [
       "Automation",
       "Operations",
-      "Process improvement",
       "Reliability",
+      "Process improvement",
+    ],
+  },
+  {
+    type: "Technical leadership",
+    status: "Professional experience",
+    title: "Leading Platform Migration Work",
+    description:
+      "Technical ownership across migration planning, dependency analysis, risk assessment, cross-team coordination, execution and validation in an enterprise production environment.",
+    topics: [
+      "Leadership",
+      "Migration",
+      "Risk management",
+      "Service ownership",
     ],
   },
 ];
 ---
 
-<BaseLayout title="Engineering | Alex del Valle">
+<BaseLayout
+  title="Engineering | Alex del Valle"
+  description="Engineering work by Alex del Valle: reliability experiments, technical decisions, troubleshooting and sanitized professional case studies."
+>
   <section>
     <div class="container">
       <p class="eyebrow">Engineering</p>
 
-      <h1>Decisions, failures and lessons learned while building systems.</h1>
+      <h1>
+        Reliability work, engineering decisions and operational impact.
+      </h1>
 
       <p class="lead">
-        Technical notes focused on architecture, reliability, troubleshooting,
-        incident analysis and the reasoning behind engineering decisions.
+        Selected technical work covering systems design, troubleshooting,
+        reliability experiments and sanitized professional experience. The
+        focus is on the problem, the engineering decision, the operational
+        outcome and what changed afterwards.
       </p>
     </div>
   </section>
+
 
   <section>
     <div class="container">
