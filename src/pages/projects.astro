@@ -1,149 +1,179 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const projects = [
-  {
-    number: "01",
-    title: "Automation Platform Lab",
-    status: "In progress",
-    description:
-      "A hands-on Platform Engineering environment using AWX and Kubernetes to explore platform operations, workload behaviour, troubleshooting and reliability.",
-    technologies: [
-      "AWX",
-      "Kubernetes",
-      "Kind",
-      "Podman",
-      "Linux",
-    ],
-    goals: [
-      "Operate and troubleshoot a Kubernetes-based automation platform",
-      "Introduce controlled failures and document recovery behaviour",
-      "Build operational runbooks and reliability experiments",
-      "Progressively introduce automation, observability and SRE practices",
-    ],
-    repository:
-      "https://github.com/alexdelvallegordo/automation-platform-lab",
-  },
-  {
-    number: "02",
-    title: "Production Platform Lab",
-    status: "Planned",
-    description:
-      "A production-like platform focused on Kubernetes, deployment workflows, GitOps and reliable application delivery.",
-    technologies: [
-      "Kubernetes",
-      "Helm",
-      "GitOps",
-      "CI/CD",
-    ],
-    goals: [
-      "Deploy and operate containerized workloads",
-      "Introduce repeatable deployment workflows",
-      "Implement GitOps-based configuration management",
-      "Explore reliability and deployment strategies",
-    ],
-  },
-  {
-    number: "03",
-    title: "Infrastructure as Code Lab",
-    status: "Planned",
-    description:
-      "Cloud infrastructure built through Infrastructure as Code with a focus on reproducibility, networking, security and operational consistency.",
-    technologies: [
-      "Terraform",
-      "AWS",
-      "IAM",
-      "VPC",
-    ],
-    goals: [
-      "Provision infrastructure through code",
-      "Design reusable Terraform configurations",
-      "Understand cloud networking and IAM",
-      "Build reproducible infrastructure environments",
-    ],
-  },
-  {
-    number: "04",
-    title: "Reliability Engineering Lab",
-    status: "Planned",
-    description:
-      "An SRE-focused environment for observability, service reliability, incident response and measurable operational objectives.",
-    technologies: [
-      "Prometheus",
-      "Grafana",
-      "OpenTelemetry",
-      "Kubernetes",
-    ],
-    goals: [
-      "Implement metrics and observability",
-      "Define SLIs and SLOs",
-      "Create meaningful alerts",
-      "Practice incident response and postmortems",
-    ],
-  },
+const technologies = [
+  "Linux",
+  "AWX",
+  "Kubernetes",
+  "Kind",
+  "Podman",
+  "Python",
+  "FastAPI",
+  "Prometheus",
+  "Grafana",
+  "Helm",
+  "GitHub Actions",
+  "NGINX Ingress",
+];
+
+const capabilities = [
+  "Build and operate an AWX automation platform on Kubernetes.",
+  "Develop a custom FastAPI service to monitor AWX and Kubernetes health.",
+  "Expose application metrics to Prometheus and visualize reliability data in Grafana.",
+  "Package and operate the application with Helm, health probes, resource controls and least-privilege RBAC.",
+  "Run containers as non-root with a read-only root filesystem and restricted capabilities.",
+  "Route multiple services through NGINX Ingress using local DNS-style hostnames.",
+  "Validate application code, Helm packaging and container builds through CI.",
+  "Automate lab startup and operational access through repeatable bootstrap scripts.",
+  "Observe workload failure and recovery behaviour and document operational findings.",
 ];
 ---
 
-<BaseLayout title="Projects | Alex del Valle">
+<BaseLayout
+  title="Projects | Alex del Valle"
+  description="Engineering projects by Alex del Valle focused on reliability, automation, observability and production-style system operation."
+>
   <section class="projects-page">
     <div class="container">
       <div class="projects-intro">
         <p class="eyebrow">Engineering projects</p>
 
-        <h1>Learning by building and operating systems.</h1>
+        <h1>
+          Systems built to be operated, observed and improved.
+        </h1>
 
         <p class="lead">
-          Hands-on projects focused on Platform Engineering, automation,
-          Kubernetes, Infrastructure as Code and Site Reliability Engineering.
+          Selected engineering work focused on reliability, automation and
+          operability. Projects are treated as systems rather than isolated
+          technology exercises, with architecture, operational controls,
+          failure modes and documentation.
         </p>
       </div>
 
+
       <div class="project-list">
-        {
-          projects.map((project) => (
-            <article class="project-entry">
-              <div class="project-meta">
-                <span>{project.number}</span>
-                <span class="tag">{project.status}</span>
-              </div>
+        <article class="project-entry">
+          <div class="project-meta">
+            <span>01</span>
+            <span class="tag">Active</span>
+          </div>
 
-              <div>
-                <h2>{project.title}</h2>
+          <div>
+            <h2>Automation Platform Reliability</h2>
 
-                <p>{project.description}</p>
+            <p>
+              A production-style automation environment that combines platform
+              engineering and Site Reliability Engineering. The project starts
+              with an AWX platform running on Kubernetes and extends it with
+              custom health monitoring, metrics, dashboards, deployment
+              automation and operational tooling.
+            </p>
 
-                <div class="stack">
-                  {project.technologies.map((technology) => (
-                    <span class="tag">{technology}</span>
-                  ))}
-                </div>
+            <div class="stack">
+              {
+                technologies.map((technology) => (
+                  <span class="tag">{technology}</span>
+                ))
+              }
+            </div>
 
-                <h3>Engineering goals</h3>
+            <h3>What it demonstrates</h3>
 
-                <ul>
-                  {project.goals.map((goal) => (
-                    <li>{goal}</li>
-                  ))}
-                </ul>
+            <ul>
+              {
+                capabilities.map((capability) => (
+                  <li>{capability}</li>
+                ))
+              }
+            </ul>
 
-                {
-                  project.repository && (
-                    <div class="button-group">
-                      <a
-                        class="button"
-                        href={project.repository}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        View repository
-                      </a>
-                    </div>
-                  )
-                }
-              </div>
-            </article>
-          ))
-        }
+            <h3>Architecture</h3>
+
+            <p>
+              AWX provides the automation workload. Platform Health, a custom
+              Python/FastAPI service, evaluates application and Kubernetes
+              health. Prometheus collects reliability metrics, Grafana provides
+              historical visibility, Helm manages deployment lifecycle and
+              NGINX Ingress exposes the platform through a single entry point.
+            </p>
+
+            <div class="button-group">
+              <a
+                class="button primary"
+                href="https://github.com/alexdelvallegordo/platform-health"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Platform Health repository
+              </a>
+
+              <a
+                class="button"
+                href="https://github.com/alexdelvallegordo/automation-platform-lab"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Platform lab repository
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Engineering scope</p>
+
+      <h2>One system, multiple engineering disciplines.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Platform</span>
+
+          <h3>Build and operate</h3>
+
+          <p>
+            Kubernetes workloads, AWX, Helm packaging, RBAC, container
+            security, Services, Ingress and repeatable environment startup.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Software</span>
+
+          <h3>Build operational tooling</h3>
+
+          <p>
+            A Python/FastAPI service with health models, API endpoints,
+            concurrent checks, automated tests and containerized delivery.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">SRE</span>
+
+          <h3>Measure and understand reliability</h3>
+
+          <p>
+            Health semantics, Prometheus metrics, Grafana dashboards, alert
+            rules, troubleshooting and controlled failure analysis.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Operations</span>
+
+          <h3>Reduce operational friction</h3>
+
+          <p>
+            Bootstrap automation, documented recovery behaviour and an
+            environment designed to support repeatable diagnosis rather than
+            manual guesswork.
+          </p>
+        </article>
       </div>
     </div>
   </section>

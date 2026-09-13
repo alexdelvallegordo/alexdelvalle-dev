@@ -4,22 +4,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const currentCapabilities = [
   "Ansible Automation Platform",
   "Linux",
-  "Platform ownership",
+  "Service ownership",
+  "People leadership",
   "Technical coordination",
-  "Automation workflows",
-  "Execution environments",
-  "REST APIs",
+  "Incident response",
   "Problem management",
-  "Process improvement",
+  "Automation",
+  "REST APIs",
+  "Reliability improvement",
   "Migrations & upgrades",
 ];
 
 const linuxCapabilities = [
   "Red Hat Linux",
   "Technical leadership",
-  "Team coordination",
   "Production operations",
-  "Problem management",
+  "Troubleshooting",
+  "Incident coordination",
   "Change management",
   "Process improvement",
   "Migrations & upgrades",
@@ -29,131 +30,172 @@ const linuxCapabilities = [
 
 <BaseLayout
   title="Experience | Alex del Valle"
-  description="Professional experience of Alex del Valle in Linux infrastructure, technical leadership, automation platforms and Platform Engineering."
+  description="Professional experience of Alex del Valle across Linux infrastructure, automation platforms, production operations, reliability and technical leadership."
 >
-  <!-- HERO -->
   <section>
     <div class="container">
       <p class="eyebrow">Experience</p>
 
       <h1>
-        From Linux infrastructure leadership to platform engineering.
+        Systems, automation, reliability and technical leadership.
       </h1>
 
       <p class="lead">
         My career has evolved from Linux infrastructure and enterprise
-        operations into automation platform engineering, with increasing
-        responsibility for technical coordination, platform ownership,
-        reliability and continuous improvement.
+        production operations into automation platform ownership, with
+        increasing responsibility for people leadership, incident response,
+        technical decisions and measurable operational improvement.
       </p>
     </div>
   </section>
 
+
   <section>
     <div class="container experience-list">
 
+      <!-- ================================================== -->
       <!-- CURRENT ROLE -->
+      <!-- ================================================== -->
+
       <article class="experience">
+
         <div class="experience-meta">
           <span>Current</span>
           <span>Automation Platform</span>
         </div>
 
-        <div>
-          <p class="eyebrow">Current role</p>
 
-          <h2>Automation Platform Engineering</h2>
+        <div>
+          <p class="eyebrow">
+            Current role
+          </p>
+
+          <h2>
+            Automation Platform & Systems Administration
+          </h2>
 
           <p class="lead">
-            Responsible for the operation and evolution of enterprise
-            automation infrastructure based on Linux and Ansible Automation
-            Platform.
+            Enterprise automation role combining Linux and Ansible Automation
+            Platform engineering with service ownership, people leadership,
+            troubleshooting and cross-team technical coordination.
           </p>
 
           <p>
-            The role combines hands-on platform engineering with infrastructure
-            ownership, technical coordination, problem management and
-            continuous improvement.
+            The role sits between hands-on platform operation and service
+            leadership: keeping the platform reliable today while improving
+            how the team operates, diagnoses problems and delivers change.
           </p>
 
-          <h3>Selected responsibilities & impact</h3>
+
+          <h3>
+            Selected responsibilities & impact
+          </h3>
 
           <ul class="experience-points">
+
             <li>
-              Own the day-to-day technical health and operation of the
-              automation platform and its Linux-based infrastructure.
+              Own and coordinate the technical health and day-to-day operation
+              of enterprise automation infrastructure based on Linux and
+              Ansible Automation Platform.
             </li>
 
             <li>
-              Coordinate platform requirements and improvements with
-              development and infrastructure teams, translating operational
-              needs into technical actions and validating the resulting
-              changes.
+              Lead team coordination and work across development,
+              infrastructure and service teams to translate operational needs
+              into technical actions.
             </li>
 
             <li>
-              Drive troubleshooting and problem management, identifying root
-              causes and defining corrective and preventive improvements.
+              Drive troubleshooting and problem management during application,
+              service and platform incidents, focusing on recovery, root cause
+              and preventive improvement.
             </li>
 
             <li>
-              Contribute to platform upgrades, migrations, lifecycle planning
-              and technical decisions involving operational risk and service
-              impact.
+              Lead and contribute to platform migrations, upgrades and
+              lifecycle activities involving dependencies, operational risk
+              and service impact.
             </li>
 
             <li>
-              Improved the infrastructure patching process, reducing the
-              execution window from approximately 7 hours to 4 hours while
-              strengthening validation and operational controls.
+              Redesigned an infrastructure patching workflow, reducing the
+              operational window from approximately 7 hours to 4 hours while
+              improving validation and control.
             </li>
 
             <li>
-              Standardize operational work through runbooks, connectivity
-              checks, reusable automation and improved procedures.
+              Analyse failures in unattended changes, classify recurring causes
+              and coordinate corrective actions with the teams responsible for
+              the affected components.
             </li>
+
+            <li>
+              Improve repeatability through runbooks, connectivity checks,
+              reusable automation, snapshot automation and standardized
+              operational procedures.
+            </li>
+
           </ul>
 
-          <h3>Core technologies & practices</h3>
 
-          <div class="technology-list">
+          <h3>
+            Core technologies & practices
+          </h3>
+
+          <div class="stack">
             {
               currentCapabilities.map((capability) => (
-                <span>{capability}</span>
+                <span class="tag">
+                  {capability}
+                </span>
               ))
             }
           </div>
+
         </div>
+
       </article>
 
 
-      <!-- PREVIOUS ROLE -->
+      <!-- ================================================== -->
+      <!-- PREVIOUS EXPERIENCE -->
+      <!-- ================================================== -->
+
       <article class="experience">
+
         <div class="experience-meta">
           <span>Previous</span>
-          <span>Linux Leadership</span>
+          <span>Linux Infrastructure</span>
         </div>
 
-        <div>
-          <p class="eyebrow">Previous experience</p>
 
-          <h2>Linux Infrastructure Technical Lead</h2>
+        <div>
+          <p class="eyebrow">
+            Previous experience
+          </p>
+
+          <h2>
+            Linux Infrastructure Technical Lead
+          </h2>
 
           <p class="lead">
             Enterprise Linux infrastructure role combining hands-on systems
-            administration with technical leadership, production ownership and
-            cross-team coordination.
+            administration, production troubleshooting, technical leadership
+            and cross-team coordination.
           </p>
 
           <p>
-            This stage provided the operational and leadership foundation for
-            my transition from traditional infrastructure management into
-            automation and platform engineering.
+            This stage built the systems and operational foundation behind my
+            current focus on automation and reliability engineering.
           </p>
 
-          <h3>Selected responsibilities</h3>
+
+          <h3>
+            Selected responsibilities
+          </h3>
 
           <ul class="experience-points">
+
             <li>
               Acted as a technical reference for Linux infrastructure,
               coordinating work across infrastructure, middleware and
@@ -161,7 +203,7 @@ const linuxCapabilities = [
             </li>
 
             <li>
-              Managed Red Hat Linux production environments and their
+              Managed Red Hat Linux production environments including
               maintenance, patching, upgrades and lifecycle activities.
             </li>
 
@@ -172,27 +214,35 @@ const linuxCapabilities = [
             </li>
 
             <li>
-              Participated in migrations and upgrade projects while evaluating
-              operational risk, dependencies and service impact.
+              Participated in migrations and upgrades while evaluating
+              dependencies, operational risk and service impact.
             </li>
 
             <li>
-              Improved and standardized operational procedures through
-              documentation, runbooks and repeatable processes, progressively
-              introducing a stronger automation mindset.
+              Standardized recurring operational work through documentation,
+              runbooks and repeatable processes, progressively introducing
+              automation where manual work created unnecessary risk or effort.
             </li>
+
           </ul>
 
-          <h3>Core technologies & practices</h3>
 
-          <div class="technology-list">
+          <h3>
+            Core technologies & practices
+          </h3>
+
+          <div class="stack">
             {
               linuxCapabilities.map((capability) => (
-                <span>{capability}</span>
+                <span class="tag">
+                  {capability}
+                </span>
               ))
             }
           </div>
+
         </div>
+
       </article>
 
     </div>

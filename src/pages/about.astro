@@ -3,61 +3,62 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const principles = [
   {
-    title: "Ownership",
+    title: "Incident response",
     description:
-      "I prefer understanding and owning systems end-to-end rather than limiting my work to isolated operational tasks.",
+      "Restore service quickly, reduce uncertainty and then understand the failure well enough to make recurrence less likely.",
   },
   {
     title: "Automation",
     description:
-      "Repeated manual work is usually a signal that a process can be simplified, standardized or automated.",
+      "Repeated manual work is a signal to simplify, standardize or automate a process when doing so improves reliability and reduces operational risk.",
   },
   {
-    title: "Reliability",
+    title: "Ownership",
     description:
-      "Infrastructure should not only work; it should be observable, predictable and designed to fail safely.",
+      "I prefer understanding systems end-to-end, including their dependencies, failure modes and operational impact, rather than treating infrastructure as isolated tasks.",
   },
   {
-    title: "Continuous improvement",
+    title: "Leadership",
     description:
-      "I look for measurable ways to improve processes, reduce operational risk and make systems easier to operate.",
+      "Technical decisions become more valuable when teams have clear ownership, shared context and a practical path from problem to action.",
   },
 ];
 ---
 
 <BaseLayout
   title="About | Alex del Valle"
-  description="About Alex del Valle, Platform and Automation Engineer focused on infrastructure, automation and Site Reliability Engineering."
+  description="About Alex del Valle — Systems and Automation Engineer focused on reliability, Site Reliability Engineering and technical leadership."
 >
   <section>
     <div class="container">
       <p class="eyebrow">About</p>
 
       <h1>
-        Infrastructure engineer focused on automation, platforms and reliability.
+        I build and operate systems with reliability in mind.
       </h1>
 
       <p class="lead">
-        I'm Alex del Valle, a Platform and Automation Engineer with a
-        background in Linux infrastructure and enterprise production
-        environments.
+        I'm Alex del Valle, a systems and automation engineer with a background
+        in Linux infrastructure, enterprise production environments,
+        troubleshooting and technical leadership.
       </p>
 
       <p class="lead">
-        My career has progressively moved from traditional systems
-        administration toward automation, platform ownership and technical
-        coordination. I'm currently expanding that foundation into Kubernetes,
-        cloud infrastructure, Infrastructure as Code and Site Reliability
-        Engineering.
+        My career has moved from traditional systems administration into
+        automation platform ownership and service leadership. My professional
+        direction is Site Reliability Engineering: combining strong systems
+        fundamentals with software, observability, automation and a disciplined
+        approach to operational reliability.
       </p>
     </div>
   </section>
+
 
   <section>
     <div class="container">
       <p class="eyebrow">Engineering mindset</p>
 
-      <h2>How I approach infrastructure engineering.</h2>
+      <h2>How I approach production systems.</h2>
 
       <div class="grid">
         {
@@ -72,36 +73,36 @@ const principles = [
     </div>
   </section>
 
+
   <section>
     <div class="container">
-      <p class="eyebrow">Direction</p>
+      <p class="eyebrow">Why SRE</p>
 
-      <h2>Building toward Site Reliability Engineering.</h2>
+      <h2>
+        Recovery is only the first half of the job.
+      </h2>
 
       <p class="lead">
-        My long-term direction is Site Reliability and Platform Engineering,
-        combining strong infrastructure fundamentals with automation,
-        observability, distributed systems and technical leadership.
+        The part of operations I value most is responding effectively when
+        something fails: understanding the symptoms, restoring service and then
+        changing the system or process so the same problem is less likely to
+        happen again.
       </p>
 
       <p>
-        This portfolio documents that progression through hands-on engineering
-        projects, technical decisions, failures, troubleshooting and lessons
-        learned.
+        I want to combine that engineering depth with service ownership and
+        people leadership. Long term, my direction is SRE leadership and
+        engineering management with enough technical depth to make credible
+        decisions about the systems and teams I am responsible for.
       </p>
 
       <div class="button-group">
         <a class="button primary" href="/projects">
-          View engineering projects
+          View engineering work
         </a>
 
-        <a
-          class="button"
-          href="https://github.com/alexdelvallegordo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
+        <a class="button" href="/experience">
+          View experience
         </a>
       </div>
     </div>
